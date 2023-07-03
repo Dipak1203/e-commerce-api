@@ -8,6 +8,8 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 const app = express();
 import cors from 'cors'
+
+const appRoot = dirname(fileURLToPath(import.meta.url));
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use('/api',router);
@@ -33,3 +35,5 @@ app.use(errorHandle);
 app.listen(SERVER_PORT,() =>{
     console.log(`server is running on port ${SERVER_PORT}`)
 })
+
+export default appRoot;

@@ -34,7 +34,7 @@ const loginController = {
       }
 
       // Toekn
-      const access_token = JwtService.sign({ _id: user._id, role: user.role });
+      const access_token = JwtService.sign({ _id: user._id, role: user.role});
       const refresh_token = JwtService.sign(
         { _id: user._id, role: user.role },
         "1y",
